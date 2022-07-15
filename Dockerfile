@@ -31,7 +31,7 @@ COPY ./.git ./.git
 COPY ./Code ./Code
 
 RUN ~/.local/bin/xmake f -y -vD
-RUN ~/.local/bin/xmake -j`nproc` -vD
+RUN ~/.local/bin/xmake -j`nproc`
 
 RUN objcopy --only-keep-debug /home/server/build/linux/${arch}/release/SkyrimTogetherServer /home/server/build/linux/${arch}/release/SkyrimTogetherServer.debug
 RUN objcopy --only-keep-debug /home/server/build/linux/${arch}/release/libSTServer.so /home/server/build/linux/${arch}/release/libSTServer.debug
